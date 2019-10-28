@@ -74,7 +74,8 @@ export default {
         toast.clear()
         // 在提示登录成功
         this.$toast.success('登录成功')
-
+        // 登录成功
+        this.$router.push(this.$route.query.redirect || '/')
         // 登录成功,将数据存储到容器中
         this.$store.commit('setUser', data.data)
         // 为了防止页面刷新数据丢失,将数据存储到本地存储
